@@ -13,7 +13,7 @@ export const checkEnv = () => {
 }
 
 const config = () => ({
-  TOKEN: process.env.BOT_TOKEN,
+  token: process.env.BOT_TOKEN,
   prefix: process.env.BOT_PREFIX,
 })
 
