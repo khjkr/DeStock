@@ -1,3 +1,9 @@
-import 'dotenv/config'
+import dotenv from 'dotenv'
+import { checkEnv } from './configure';
+import DeStock from './bot/DeStock'
 
-console.log(process.env.TOKEN)
+dotenv.config()
+checkEnv()
+
+const client = new DeStock()
+client.login()
