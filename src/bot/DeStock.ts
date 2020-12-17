@@ -1,4 +1,5 @@
 import { Client } from 'discord.js'
+import onMessage from './event/onMessage'
 import config from '../configure'
 
 class DeStock extends Client {
@@ -11,11 +12,7 @@ class DeStock extends Client {
       this.user?.setActivity(`${config().prefix}help`)
     })
 
-    this.on('message', (msg) => {
-      if (msg.content.startsWith(config().prefix + 'ping')) {
-        msg.channel.send('Pong!')
-      }
-    })
+    this.on('message', msg => onMessage(this, msg))
 
     super.login(t)
   }
