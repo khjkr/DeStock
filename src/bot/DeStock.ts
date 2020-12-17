@@ -1,5 +1,5 @@
 import { Client } from 'discord.js'
-import config from '../configure';
+import config from '../configure'
 
 class DeStock extends Client {
   login(token?: string): any {
